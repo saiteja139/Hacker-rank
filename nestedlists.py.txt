@@ -1,0 +1,16 @@
+if __name__ == '__main__':
+    scorelist={}
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        if score in scorelist :
+            scorelist[score].append(name)
+        else :
+            scorelist[score]=[name]
+    newlist=[]
+    for i in scorelist:
+        newlist.append([i,scorelist[i]])
+    newlist.sort()
+    result=newlist[1][1]
+    result.sort()
+    print(*result,sep="\n")
